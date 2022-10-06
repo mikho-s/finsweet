@@ -1,0 +1,264 @@
+@use "sass:math";
+
+//=====================<МИКСИНЫ>=================================================
+@import "mixins";
+//=====================</МИКСИНЫ>=================================================
+
+//=====================<ШРИФТЫ>===================================================
+
+//=========<Подключаем шрифты>====================================
+//&subset=cyrillic-ext
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,regular,500,600");
+//@import url("https://fonts.googleapis.com/css?family=Heebo:regular,500,700,900&display=swap");
+//@import "fonts";
+//========</Подключаем шрифты>=======================================
+
+//=========Иконочные шрифты>===========================================
+@import "icons";
+//=========</Иконочные шрифты>=========================================
+
+//==========<Шрифт по умолчанию>========================================
+$fontFamily: "Poppins";
+//=========</Шрифт по умолчанию>========================================
+
+//=====================</ШРИФТЫ>========================================================
+
+//=====================<ПЕРЕМЕННЫЕ>======================================================
+
+// Минимальная ширина страницы
+$minWidth: 320;
+// Ширина полотна (макета)
+$maxWidth: 1920;
+// Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1280;
+// Общий отступ у контейнера
+// (30 = по 15px слева и справа, 0 = нет отступа)
+$containerPadding: 24;
+// Ширина срабатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поинты
+
+$md1: $containerWidth;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+$pc: $containerWidth;
+$tablet: 991.98;
+$mobile: 767.98;
+$mobileSmall: 479.98;
+//=====================</ПЕРЕМЕННЫЕ>===============================================================
+
+//=====================<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>==============================================
+@import "null";
+
+body {
+	font-size: 16px;
+	color: #282939b3;
+
+	&._lock {
+		overflow: hidden;
+		touch-action: none;
+		overscroll-behavior: none;
+	}
+}
+
+//=====================</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>==============================================
+
+//=====================<ОБОЛОЧКА>===============================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+
+	&._loaded {}
+}
+
+//=====================</ОБОЛОЧКА>==============================================================
+
+//<ОСНОВНАЯ СЕТКА>==========================================================================
+._container {
+	max-width: ($maxWidthContainer + px);
+	margin: 0 auto;
+
+	@media (max-width: ($md1+px)) {
+		max-width: 970px;
+	}
+
+	@media (max-width: ($md2+px)) {
+		max-width: 750px;
+	}
+
+	@media (max-width: ($md3+px)) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+
+//</ОСНОВНАЯ СЕТКА>====================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>=============================================
+//@import "forms";
+//@import "ui";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>==============================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>==================================================================
+//@import "datepicker";
+//@import "lightgallery";
+//@import "pagging";
+//@import "popup";
+@import "header";
+@import "footer";
+@import "home";
+@import "about";
+@import "pricing";
+@import "features";
+//@import "works";
+//@import "blog";
+//@import "article";
+
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>===============================================
+//<ОСНОВНОЙ БЛОК+ ОБЩИЕ>=============================================================
+.page {
+	// padding: 90px 0px 0px 0px;
+	flex: 1 1 auto;
+	@include adaptiveValue("padding-top", 90, 20);
+	// @media (max-width: $md3+px) {
+	// 	padding: 30px 0px 0px 0px;
+	// }
+}
+
+.title54 {
+	font-weight: 600;
+	font-size: 54px;
+	line-height: 133%;
+	@include adaptiveValue("font-size", 54, 35);
+
+
+	// @media (max-width:($md2+px)) {
+	// 	font-size: 45px;
+
+	// }
+
+	// @media (max-width:($md3+px)) {
+	// 	font-size: 35px;
+
+	// }
+}
+
+.title {
+	font-weight: 600;
+	font-size: 48px;
+	line-height: 133%;
+	@include adaptiveValue("font-size", 48, 32);
+
+	// @media (max-width:($md2+px)) {
+	// 	font-size: 40px;
+
+	// }
+
+	// @media (max-width:($md3+px)) {
+	// 	font-size: 32px;
+
+	// }
+}
+
+.title38 {
+	font-weight: 600;
+	font-size: 38px;
+	line-height: 150%;
+	color: #282938;
+	@include adaptiveValue("font-size", 38, 25);
+
+	// @media (max-width:($md2+px)) {
+	// 	font-size: 32px;
+
+	// }
+
+	// @media (max-width:($md3+px)) {
+	// 	font-size: 25px;
+
+	// }
+}
+
+.btn-bg {
+	display: inline-flex;
+	color: #1B1C2B;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 178%;
+	padding: 16px 56px;
+	border-radius: 41px;
+	background: #FCD980;
+
+	&:hover {
+		color: #FFF;
+		background: #fadc91;
+		border: 2px solid #fff;
+		padding: 14px 54px;
+	}
+}
+
+.btn-arr {
+	display: inline-flex;
+	color: #BBBBCB;
+	font-weight: 500;
+	font-size: 16px;
+
+
+	&:hover {
+		color: #FFF;
+	}
+}
+
+
+
+[class*="-ibg"] {
+	position: relative;
+
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+
+[class*="-ibg_contain"] {
+	img {
+		object-fit: contain;
+	}
+}
+
+
+
+._ibg {
+
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	// padding-bottom: 70%;
+}
+
+._ibg img {
+
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+
+	// opacity: 0;
+	// visibility: hidden;
+}
+
+//============================================================================
+
+
+//</ОСНОВНОЙ БЛОК>================================================

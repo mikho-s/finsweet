@@ -1,0 +1,231 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    background-color: #1C1E53;
+    @include adaptiveValue("padding-top", 16, 10, 768, 320, 2);
+    @include adaptiveValue("padding-bottom", 16, 10, 768, 320, 2);
+
+    &__container {
+        max-width: 1300px;
+        padding: 0 10px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        // height: 90px;
+
+    }
+
+    &__logo {
+        // position: fixed;
+        z-index: 5;
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+        padding-right: 20px;
+
+        @media (max-width:($mobile+px)) {
+            padding-right: 0;
+
+        }
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: flex-end;
+        font-weight: 500;
+        line-height: 175%;
+        flex: 1 1 auto;
+
+
+
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+    }
+
+    &__button {
+        line-height: 175%;
+        z-index: 5;
+        display: inline-flex;
+        @include adaptiveValue("padding-top", 14, 10);
+        @include adaptiveValue("padding-left", 48, 15);
+        @include adaptiveValue("padding-bottom", 14, 10);
+        @include adaptiveValue("padding-right", 48, 15);
+        border: 2px solid #f4f6fc33;
+        border-radius: 41px;
+        color: #BBBBCB;
+
+        &:hover {
+            color: #FFF;
+            border: 2px solid #fff;
+        }
+
+        @media (max-width:($mobile+px)) {
+            line-height: 125%;
+        }
+
+
+    }
+}
+
+.menu {
+    padding-right: 50px;
+
+    @media (max-width:($tablet+px)) {
+        padding-right: 35px;
+
+    }
+
+
+    &__body {
+
+
+        @media (max-width:($mobile+px)) {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: -100%;
+            transition: all 0.3s ease 0s;
+            overflow: auto;
+            background-color: rgba(28, 30, 84, 0.95);
+            @include adaptiveValue("padding-top", 140, 100, 768, 320, 2);
+
+            // display: flex;
+            // flex-direction: column;
+            // align-items: center;
+            &::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: -100%;
+                transition: all 0.3s ease 0s;
+                width: 100%;
+                @include adaptiveValue("height", 90, 72, 768, 320, 2);
+                background-color: #1C1E53;
+                z-index: 2;
+            }
+
+            &.menu-open {
+                left: 0;
+
+                &::before {
+                    left: 0;
+                }
+            }
+
+        }
+
+
+
+
+    }
+
+    &__list {
+        display: flex;
+        column-gap: 30px;
+        row-gap: 30px;
+        @include adaptiveValue("column-gap", 30, 15);
+        // flex-wrap: wrap;
+
+        @media (max-width:($mobile+px)) {
+            flex-direction: column;
+            text-align: center;
+        }
+
+
+    }
+
+    &__item {}
+
+    &__link {
+        color: #BBBBCB;
+
+        &:hover {
+            color: #FFF;
+        }
+
+        @media (max-width:($mobile+px)) {
+            font-size: 30px;
+        }
+    }
+}
+
+
+// ================================================================
+// ================================================================
+// ================================================================
+
+//Burger
+
+.icon-menu {
+    display: none;
+
+    @media (max-width: ($mobile+px)) {
+        display: block;
+        position: relative;
+        // width: rem(30);
+        // height: rem(18);
+        background-color: transparent;
+        width: 30px;
+        height: 18px;
+        cursor: pointer;
+        z-index: 5;
+
+        span,
+        &::before,
+        &::after {
+            content: "";
+            transition: all 0.3s ease 0s;
+            right: 0;
+            position: absolute;
+            width: 100%;
+            // height: rem(2);
+            height: 10%;
+            background-color: #ffffff;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+
+        span {
+            // top: calc(50% - rem(1));
+            top: calc(50% - 1px);
+            // top: 50%;
+            // transform: scale(1) translate(0px, 50%);
+        }
+
+        &.menu-open {
+            span {
+                width: 0;
+            }
+
+            &::before,
+            &::after {}
+
+            &::before {
+                // top: calc(50% - rem(1));
+                top: calc(50% - 1px);
+                transform: rotate(-45deg);
+            }
+
+            &::after {
+                // bottom: calc(50% - rem(1));
+                bottom: calc(50% - 1px);
+                transform: rotate(45deg);
+            }
+        }
+    }
+}

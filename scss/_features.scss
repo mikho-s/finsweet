@@ -1,0 +1,122 @@
+.features-benefits-logo {
+    margin-top: -30px;
+    padding-bottom: 95px;
+}
+
+.features-benefits__container {
+    padding-bottom: 0;
+}
+
+.image-block2-gray {
+    background-color: #F4F6FC;
+}
+
+.image-block2-yellow {
+    background: rgba(252, 217, 128, 0.1);
+}
+
+.image-block1 {
+
+    &__container {
+        max-width: 1300px;
+        padding: 130px 10px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width:($md2+px)) {
+            padding: 30px 10px;
+            text-align: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+
+    &__description {
+        padding: 40px 0;
+        flex: 0 1 48%;
+
+        @media (max-width:($tablet+px)) {
+            padding: 20px 0;
+
+        }
+    }
+
+    &__subtitle {
+        padding-bottom: 15px;
+    }
+
+    &__title {
+        padding-bottom: 15px;
+
+    }
+
+    &__text {
+        line-height: 175%;
+
+    }
+
+    &__content {
+        flex: 0 1 48%;
+
+        @media (max-width:($tablet+px)) {
+            padding-bottom: 65%;
+        }
+    }
+}
+
+// ================================================================================================
+// ================================================================================================
+// ================================================================================================
+
+.image-block2 {
+
+
+    &__container {
+        max-width: 1300px;
+        padding: 130px 10px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        @media (max-width:($md2+px)) {
+            padding: 30px 10px;
+            text-align: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+
+    &__description {
+        padding: 70px 0;
+        flex: 0 1 49%;
+
+        @media (max-width:($tablet+px)) {
+            padding: 20px 0;
+
+        }
+    }
+
+    &__subtitle {
+        padding-bottom: 15px;
+    }
+
+    &__title {
+        padding-bottom: 15px;
+
+    }
+
+    &__text {
+        line-height: 175%;
+
+    }
+
+    &__content {
+        flex: 0 1 48%;
+
+        @media (max-width:($tablet+px)) {
+            padding-bottom: 65%;
+        }
+    }
+}
