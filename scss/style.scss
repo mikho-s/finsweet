@@ -115,7 +115,7 @@ body {
 @import "about";
 @import "pricing";
 @import "features";
-//@import "works";
+@import "work";
 //@import "blog";
 //@import "article";
 
@@ -131,6 +131,8 @@ body {
 }
 
 .title54 {
+	color: #282938;
+
 	font-weight: 600;
 	font-size: 54px;
 	line-height: 133%;
@@ -149,6 +151,8 @@ body {
 }
 
 .title {
+	color: #282938;
+
 	font-weight: 600;
 	font-size: 48px;
 	line-height: 133%;
@@ -166,6 +170,8 @@ body {
 }
 
 .title38 {
+	color: #282938;
+
 	font-weight: 600;
 	font-size: 38px;
 	line-height: 150%;
@@ -181,6 +187,10 @@ body {
 	// 	font-size: 25px;
 
 	// }
+}
+
+.title-white {
+	color: #fff;
 }
 
 .btn-bg {

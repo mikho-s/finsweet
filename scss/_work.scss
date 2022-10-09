@@ -1,0 +1,214 @@
+.work-header {
+    background-color: #F4F6FC;
+
+    &__container {
+        padding: 130px 10px;
+        max-width: 1300px;
+        margin: 0 auto;
+        text-align: center;
+
+        @media (max-width:($tablet+px)) {
+            padding: 80px 10px;
+        }
+    }
+
+    &__subtitle {
+        padding-bottom: 5px;
+    }
+
+    &__title {
+        padding-bottom: 25px;
+    }
+
+    &__text {
+        padding-bottom: 30px;
+        max-width: 730px;
+        margin: 0 auto;
+    }
+
+    &__links {
+        color: #282938;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    &__link {}
+}
+
+
+// ===============================================================================================
+// ===============================================================================================
+// ===============================================================================================
+
+
+.work-body {
+
+    &__container {
+        padding: 130px 10px;
+        max-width: 1300px;
+        margin: 0 auto;
+
+        @media (max-width:($tablet+px)) {
+            padding: 50px 10px;
+        }
+    }
+
+    &__tabs {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding-bottom: 50px;
+    }
+
+    &__tab {}
+
+    &__items {}
+}
+
+.items-work-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 50px;
+    column-gap: 20px;
+
+
+    &__item {
+        flex: 0 1 48.5%;
+
+        @media (max-width:($mobile+px)) {
+            flex: 1 1 auto;
+
+        }
+
+    }
+
+    &__image {
+        display: flex;
+        margin-bottom: 25px;
+        max-height: 380px;
+        padding-bottom: 50%;
+        border-style: solid;
+        @include adaptiveValue("border-width", 30, 5);
+
+        @media (min-width:($tablet+px)) {
+            &:hover {
+                border-width: 5px;
+                transition: all 0.3s ease 0s;
+                padding-bottom: 58%;
+            }
+        }
+
+    }
+
+    &__descriptions {
+        color: #282938;
+    }
+
+
+
+
+    &__title {
+        color: inherit;
+        font-weight: 600;
+        font-size: 38px;
+        line-height: 150%;
+        padding-bottom: 12px;
+
+        &:hover {
+            color: #BBBBCB;
+        }
+    }
+
+    &__text {
+        color: rgba(40, 41, 56, 0.7);
+        padding-bottom: 25px;
+    }
+
+    &__link {
+        &.btn-arr {
+            color: #282938;
+
+
+            &:hover {
+                color: #BBBBCB;
+            }
+
+        }
+    }
+}
+
+.work-body-border-1 {
+    border-image: linear-gradient(131.34deg, #F4EDE1 16.74%, #98B1C6 103.17%);
+    border-image-slice: 1;
+}
+
+.work-body-border-2 {
+    border-image: linear-gradient(131.34deg, #FFD3AF 16.74%, #4F56FF 103.17%);
+    border-image-slice: 1;
+}
+
+.work-body-border-3 {
+    border-image: linear-gradient(131.34deg, #EEBCA7 16.74%, #C8C8C8 103.17%);
+    border-image-slice: 1;
+}
+
+.work-body-border-4 {
+    border-image: linear-gradient(131.34deg, #C2E7F2 16.74%, #98A4FF 103.17%);
+    border-image-slice: 1;
+}
+
+.work-body-border-5 {
+    border-image: linear-gradient(131.34deg, #C5BCFF 16.74%, #9BF7D5 103.17%);
+    border-image-slice: 1;
+}
+
+.work-body-border-6 {
+    border-image: linear-gradient(131.34deg, #D2D6FD 16.74%, #D6ACEA 103.17%);
+    border-image-slice: 1;
+}
+
+
+// ===============================================================================================
+// ===============================================================================================
+// ===============================================================================================
+
+
+.work-contact {
+
+    &__container {
+        padding: 130px 10px;
+        max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+
+        @media (max-width:($tablet+px)) {
+            padding: 50px 10px;
+        }
+    }
+
+    &__title {
+        max-width: 730px;
+        padding-bottom: 20px;
+    }
+
+    &__subtitle {
+        max-width: 565px;
+        padding-bottom: 40px;
+    }
+
+    &__link {
+        display: inline-flex;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 32px;
+        background-color: #FCD980;
+        border-radius: 41px;
+        padding: 16px 66px;
+    }
+}
